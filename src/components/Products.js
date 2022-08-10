@@ -4,8 +4,7 @@ import Product from './Product';
 
 
 const Products = () => {
-  const context = useContext(MainContext);
-  console.log(context);
+  const context = useContext(MainContext);  
   return (
     <div className='products'>
       <div className="container">

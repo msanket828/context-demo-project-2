@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { MainContext } from '../store/main-context';
 
 const Product = ({ product }) => {
-  const { price, title, images, category } = product;
+  const ctx=useContext(MainContext);
+  const { price, title, images, category,id } = product;  
   return (
     <li className='product_item'>
       <h1 className='product_item_category'>{category}</h1>
@@ -12,9 +14,12 @@ const Product = ({ product }) => {
       <div className='badge'>
         <p>${price}</p>
       </div>
-      <div className='btn-container'>
-        <button className='btn btn-success mb-2 w-100'>Add To Cart</button>
-        <button className='btn btn-danger w-100'>Remove from Cart</button>
+      <div className='btn-container'> 
+      { ctx.cart && ctx.cart.find((item)=> item.id === id) ? (
+        <button className='btn btn-danger w-100' onClick={()=>ctx.removeFromCart(product)}>Remove from Cart</button>
+        ) : (
+          <button className='btn btn-success mb-2 w-100' onClick={()=>ctx.addToCart(product)}>Add To Cart</button>
+        )}       
       </div>
     </li>
   )
