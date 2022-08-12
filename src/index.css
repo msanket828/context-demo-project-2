@@ -117,11 +117,16 @@ nav.navbar {
   object-fit: contain;
 }
 
-
+.flex-1 {
+  flex: 1;
+}
 
 /* ------------------------- products/product : end ------------------------- */
 .cart-product {
-  border: 1px solid #000;
+  display: flex;
+  align-items: flex-start;
+  gap: 0 10px;
+  border: 1px solid rgba(0,0,0,0.125);
   padding: 10px;
   margin: 0 0 10px;
 }
@@ -133,7 +138,60 @@ nav.navbar {
 }
 
 .cart-product .cart-product__title {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.cart-product .cart-product__desc {
   font-size: 12px;
   line-height: 15px;
+  font-weight: 400;
+}
+.cart-product .cart-product__price {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.cart .sticky-container {
+  position: sticky;
+  top: calc(0px + 80px);
+  right: 0;
+  padding: 15px;
+  transition: all .2s ease;
+}
+
+.cart .total-amount {
+  font-weight: 550;
+}
+.cart .total-amount span {
+  font-weight: 700;
+}
+
+.payable-list-item {
+  display: flex;
+  align-items: center;
+  gap: 0 10px;
+}
+
+.payable-list-item:not(:last-child) .payable_item {
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 550;
+}
+
+.payable-list-item:not(:last-child) .payable_price {
+  font-weight: 700;
+}
+
+.payable-list-item:last-child .payable_item {
   font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.payable-list-item:last-child .payable_price {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
 }

@@ -5,8 +5,7 @@ export const MainContext = createContext();
 const Context = (props) => {
   const [cart, setCart] = useState([]);
   const [productData, setProductData] = useState([]);
-  // const [total, setTotal] = useState(0);
-
+  
   const baseUrl = 'https://dummyjson.com/products';
 
   useEffect(() => {
@@ -20,14 +19,6 @@ const Context = (props) => {
     setCart([...cart, product]);
   }
 
-  // useEffect(()=> {
-  //   let total=cart.reduce((prevValue,currentValue)=> {
-  //     return (
-  //       +prevValue.price + +currentValue.price
-  //     )
-  //   },[]);
-  //   console.log(total);
-  // },[cart]);
 
   const removeFromCart = (product) => {
     setCart(
