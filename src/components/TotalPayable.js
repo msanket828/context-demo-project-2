@@ -11,7 +11,7 @@ const TotalPayable = ({total}) => {
         {
           ctx.cart.map((item)=> {
             return (
-              <li className='payable-list-item'>
+              <li className='payable-list-item' key={item.id}>
                 <p className='payable_item'>{item.title}</p>
                 <p className='payable_price ml-auto'>${item.price}</p>
               </li>
